@@ -7,7 +7,7 @@ buffer message types in ```.proto``` files. Each protocol buffer message is a sm
 ### 2. Download project using git
 Use the following command to clone this repository:
 
-    git clone https://github.com/essentialprogramming/___------_____TOBEUPDATED
+    git clone https://github.com/essentialprogramming/grpc-client-server-schema.git
 
 
 ### 3. Defining the Service
@@ -36,7 +36,7 @@ Navigate to ```grpc-server``` folder at ```pom.xml``` level and execute the foll
 
 ### 5. Create the Server 
 
-After the source code in generated in __PATH__,navigate to ```grpc-server``` and create a class in main folder called ```HelloWorldServiceImpl``` and populate it as follows : 
+After the source code in generated in *target/generated-sources/protobuf* , navigate to ```grpc-server``` and create a class in main folder called ```HelloWorldServiceImpl``` and populate it as follows : 
 > We shall extend this class and override the hello() method mentioned in our service definition:
   
 
@@ -88,7 +88,7 @@ The *start()* method is starting the server and we are calling *awaitTermination
    gRPC has a channel construct that abstracts the details like load balancing, connection, connection pulling.
    The channel is created using the class *ManagedChannelBuilder* where the only detail that is specified is the address and the port.  
    
-   After the source code in generated in __PATH__,navigate to ```grpc-client``` and create a class in main folder called ```GrpcClient``` and populate it as follows :  
+   After the source code in generated in *target/generated-sources/protobuf* , navigate to ```grpc-client``` and create a class in main folder called ```GrpcClient``` and populate it as follows :  
    ```java
 public class GrpcClient {
     public static void main(String[] args) {
@@ -110,13 +110,13 @@ public class GrpcClient {
 ```
 
 ### 7. Run the newly generated classes  
-*  Navigate to grpc-server folder at pom.xml level and execute the following command ```mvn clean install``` in order to  build the project that uses the newly generated classes (generate executable uber-jar)  
-  run the newly generated jar with the following command(from the same path) :  
+*  Navigate to grpc-server folder at pom.xml level and execute the following command ```mvn clean install``` in order to  build the project that uses the newly generated classes (generate executable uber-jar).  
+  Run the newly generated jar with the following command *(from the same path)* :  
   ```java -jar target/grpc-0.0.1-SNAPSHOT-shaded.jar ```
   
 
-* Navigate to grpc-client folder at pom.xml level and execute the following command ```mvn clean install``` in order to  build the project that uses the newly generated classes (generate executable uber-jar)  
-run the newly generated jar with the following command(from the same path) :
+* Navigate to grpc-client folder at pom.xml level and execute the following command ```mvn clean install``` in order to  build the project that uses the newly generated classes (generate executable uber-jar).  
+Run the newly generated jar with the following command *(from the same path)* :  
   ```java -jar target/grpc-0.0.1-SNAPSHOT-shaded.jar```
 
 
